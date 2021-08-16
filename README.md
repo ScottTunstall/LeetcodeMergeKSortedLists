@@ -13,3 +13,5 @@ Memory Usage: 14.9 MB, less than 8.08% of C++ online submissions for Merge k Sor
 
 Second attempt I used list<> and multiset<> but they were actually slower than the first approach.
 So much for optimisation!
+
+As usual, use this for learning, not to cheat on leetcode tests.

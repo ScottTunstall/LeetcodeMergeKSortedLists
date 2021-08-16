@@ -14,6 +14,8 @@ Runtime: 24 ms, faster than 61.63% of C++ online submissions for Merge k Sorted 
 Memory Usage: 14.9 MB, less than 8.08% of C++ online submissions for Merge k Sorted Lists.
 
 Second attempt I used list<> and multiset<> but they were actually slower than the first approach.
-So much for optimisation!
+So much for optimisation.
+
+I thought of other ways such as comparing each head of each list and inserting min value of all lists, might try that next commit.
 
 As usual, use this for learning, not to cheat on leetcode tests.

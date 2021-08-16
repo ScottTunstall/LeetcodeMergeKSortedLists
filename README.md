@@ -2,7 +2,9 @@
 
 My solution for the Merge K Sorted Lists problem: https://leetcode.com/problems/merge-k-sorted-lists/ .
 
-I thought I'd tackle this one in C++ just for a change.
+Hard? It was a doddle!
+
+I thought I'd tackle this one in C++ just for a change.  
 
 I'm pleasantly surprised to see that C++ isn't the absolute catastrophe it used to be 20 years ago. I've fell in love with it again :)
 

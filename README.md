@@ -1,6 +1,6 @@
 # LeetcodeMergeKSortedLists
 
-My solution for the Merge K Sorted Lists problem: https://leetcode.com/problems/merge-k-sorted-lists/ .
+My solution for the Merge K Sorted Lists problem (HARD difficulty): https://leetcode.com/problems/merge-k-sorted-lists/ .
 
 Hard? It was a doddle!
 

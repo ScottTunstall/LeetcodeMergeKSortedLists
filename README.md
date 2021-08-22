@@ -16,6 +16,7 @@ Memory Usage: 14.9 MB, less than 8.08% of C++ online submissions for Merge k Sor
 Second attempt I used list<> and multiset<> but they were actually slower than the first approach.
 So much for optimisation.
 
-I thought of other ways such as comparing each head of each list and inserting min value of all lists, might try that next commit.
+I have tried other ways such as comparing each head of each list and inserting min value of all lists - timed out though. ee "IAlsoTried.txt" in the repo.
+Probably to do with the amount of new() calls which are expensive. I should maybe tamper with the ListNodes in the vector parameter directly and set their next* instead of creating new instances.
 
-As usual, use this for learning, not to cheat on leetcode tests.
+As usual, use the code for learning, not to cheat on leetcode tests.

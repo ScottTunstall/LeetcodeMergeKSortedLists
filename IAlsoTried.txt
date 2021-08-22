@@ -1,0 +1,132 @@
+ListNode* Solution::mergeKLists(vector<ListNode*>& lists)
+{
+	if (lists.size() == 0)
+		return nullptr;
+
+	if (lists.size() == 1)
+		return merge(lists[0], nullptr);
+
+	ListNode* result;
+
+	result = merge(lists[0], lists[1]);
+
+	for (int i = 2; i < lists.size(); i++)
+	{
+		result = merge(result, lists[i]);
+	}
+
+
+	return result;
+}
+
+
+ListNode* Solution::merge(ListNode* sortedList1, ListNode* sortedList2)
+{
+	ListNode* mergedHead = nullptr;
+	ListNode* tailOfMergedList = mergedHead;
+	
+	ListNode* currentList1 = sortedList1;
+	ListNode* currentList2 = sortedList2;
+
+	while (currentList1 != nullptr && currentList2 != nullptr)
+	{
+		auto val1 = currentList1->val;
+		auto val2 = currentList2->val;
+
+		if (val1 == val2)
+		{
+			auto a1 = new ListNode(val1, new ListNode(val2));
+
+			if (mergedHead == nullptr)
+			{
+				mergedHead = a1;
+				tailOfMergedList = mergedHead->next;
+			}
+			else
+			{
+				tailOfMergedList->next = a1;
+				tailOfMergedList = a1->next;
+			}
+
+			currentList1 = currentList1->next;
+			currentList2 = currentList2->next;
+			continue;
+		}
+
+		if (val1 < val2)
+		{
+			auto a1 = new ListNode(val1);
+
+			if (mergedHead == nullptr)
+			{
+				mergedHead = a1;
+				tailOfMergedList = a1;
+			}
+			else
+			{
+				tailOfMergedList->next = a1;
+				tailOfMergedList = a1;
+			}
+
+			currentList1 = currentList1->next;
+			continue;
+		}
+
+		if (val1 > val2)
+		{
+			auto a2 = new ListNode(val2);
+
+			if (mergedHead == nullptr)
+			{
+				mergedHead = a2;
+				tailOfMergedList = a2;
+			}
+			else
+			{
+				tailOfMergedList->next = a2;
+				tailOfMergedList = a2;
+			}
+
+			currentList2 = currentList2->next;
+			continue;
+		}
+	}
+
+	while (currentList1 != nullptr)
+	{
+		auto a1 = new ListNode(currentList1->val);
+
+		if (mergedHead == nullptr)
+		{
+			mergedHead = a1;
+			tailOfMergedList = a1;
+		}
+		else
+		{
+			tailOfMergedList->next = a1;
+			tailOfMergedList = a1;
+		}
+
+		currentList1 = currentList1->next;
+	}
+
+	while (currentList2 != nullptr)
+	{
+		auto a2 = new ListNode(currentList2->val);
+
+		if (mergedHead == nullptr)
+		{
+			mergedHead = a2;
+			tailOfMergedList = a2;
+		}
+		else
+		{
+			tailOfMergedList->next = a2;
+			tailOfMergedList = a2;
+		}
+
+		currentList2 = currentList2->next;
+	}
+
+	return mergedHead;
+}
